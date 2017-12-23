@@ -3,17 +3,33 @@
     margin: 0 auto;
     &:not(:last-child) {
         margin-bottom: $gutter-vertical;
+        /*
+            The media query takes care of changing the gutter's height to a smaller one for the grid when the tab-port breakpoint is reached.
+        */
+        @include respond(tab-port) {
+            margin-bottom: $gutter-vertical-small;
+        }
     }
-
+    @include respond(tab-port) {
+        max-width: 50rem;
+    }
     @include clearfix;
-
     [class^="col-"] {
         float: left;
         &:not(:last-child) {
             margin-right: $gutter-horizontal;
+            /*
+                The media query takes care of setting margin-right to 0 once the tab-port breakpoint is reached.
+            */
+            @include respond(tab-port) {
+                margin-right: 0 !important;
+                margin-bottom: $gutter-vertical-small;
+            }
+        }
+        @include respond(tab-port) {
+            width: 100% !important;
         }
     }
-
     .col-1-of-2 {
         width: calc((100% - #{$gutter-horizontal}) / 2);
     }

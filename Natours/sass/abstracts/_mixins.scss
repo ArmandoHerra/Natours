@@ -39,6 +39,11 @@
 /*
         em's and rem's aren't affected by the root font setting in _base.scss under the .html styles so using direct em's for our media queries is the best option.
 */
+/*
+    Order of Media Queries.
+    (Base + Typography) -> (General Layout + Grid) -> Page Layout -> Components
+
+*/
 @mixin respond($breakpoint) {
     @if $breakpoint == phone {
         // 37.5em = 600px (1em = 16px)
@@ -60,7 +65,7 @@
     }
     @if $breakpoint == big-desktop {
         // 112.5em = 1800px (1em = 16px)
-        @media (max-width: 112.5em) {
+        @media (min-width: 112.5em) {
             @content;
         }
     }
