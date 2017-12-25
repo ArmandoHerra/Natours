@@ -1,3 +1,7 @@
+//Component: _bg-video.scss
+/*
+    Background video styles.
+*/
 .bg-video {
     @include absPosition;
     height: 100%;
@@ -5,6 +9,9 @@
     z-index: -1;
     opacity: .15;
     overflow: hidden;
+    /*
+        bg-video__content styles.
+    */
     &__content {
         height: 100%;
         width: 100%;

@@ -1,7 +1,16 @@
+/*
+        Styles for the navigation element.
+*/
 .navigation {
+    /*
+            Styles for the navigation__checkbox element.
+    */
     &__checkbox {
         display: none;
     }
+    /*
+            Styles for the navigation__button element.
+    */
     &__button {
         background-color: $color-white;
         height: 7rem;
@@ -14,15 +23,24 @@
         box-shadow: 0 1rem 3rem rgba($color-black, .1);
         text-align: center;
         cursor: pointer;
+        /*
+                Styles to be applied on the navigation__button once the tab-port breakpoint is reached.
+        */
         @include respond(tab-port) {
             top: 4rem;
             right: 4rem;
         }
+        /*
+                Styles to be applied on the navigation__button once the phone breakpoint is reached.
+        */
         @include respond(phone) {
             top: 3rem;
             right: 3rem;
         }
     }
+    /*
+            Styles for the navigation__background element.
+    */
     &__background {
         height: 6rem;
         width: 6rem;
@@ -33,15 +51,24 @@
         background-image: radial-gradient($color-primary-light, $color-primary-dark);
         z-index: 3;
         transition: transform .8s cubic-bezier(0.86, 0, 0.07, 1);
+        /*
+                Styles to be applied on the navigation__background once the tab-port breakpoint is reached.
+        */
         @include respond(tab-port) {
             top: 4.5rem;
             right: 4.5rem;
         }
+        /*
+                Styles to be applied on the navigation__background once the phone breakpoint is reached.
+        */
         @include respond(phone) {
             top: 3.5rem;
             right: 3.5rem;
         }
     }
+    /*
+            Styles for the navigation__nav element.
+    */
     &__nav {
         height: 100vh;
         position: fixed;
@@ -52,6 +79,9 @@
         width: 0;
         transition: all .8s cubic-bezier(0.68, -0.55, 0.265, 1.55);
     }
+    /*
+            Styles for the navigation__list element.
+    */
     &__list {
         position: absolute;
         top: 50%;
@@ -61,10 +91,19 @@
         text-align: center;
         width: 100%;
     }
+    /*
+            Styles for the navigation__item element.
+    */
     &__item {
         margin: 1rem;
     }
+    /*
+            Styles for the navigation__link element.
+    */
     &__link {
+        /*
+                Styles for the navigation__link:link and navigation__link:visited states.
+        */
         &:link, &:visited {
             display: inline-block;
             font-size: 3rem;
@@ -77,61 +116,101 @@
             transparent 0%, transparent 50%, $color-white 50%);
             background-size: 220%;
             transition: all .4s;
+            /*
+                    Styles for the span within the navigation__link element.
+            */
             span {
                 margin-right: 1.5rem;
                 display: inline-block;
             }
         }
+        /*
+                Styles for the navigation__link:hover and navigation__link:active states.
+        */
         &:hover, &:active {
             background-position: 100%;
             color: $color-primary;
             transform: translateX(1rem);
         }
     }
-    // FUNCTIONALITY
+    /*
+            Styles to be applied on the navigation__background when the navigation__checkbox:checked state is entered.
+    */
     &__checkbox:checked ~ &__background {
         transform: scale(80);
     }
+    /*
+            Styles to be applied on the navigation__nav when the navigation__checkbox:checked state is entered.
+    */
     &__checkbox:checked ~ &__nav {
         opacity: 1;
         width: 100%;
     }
-    // ICON
+    /*
+            Styles for the navigation__icon element.
+    */
     &__icon {
         position: relative;
         margin-top: 3.5rem;
+        /*
+                Styles for the navigation__icon, navigation__icon::before and navigation__icon::after pseudo-selectors.
+        */
         &, &::before, &::after {
             width: 3rem;
             height: 2px;
             background-color: $color-grey-dark-3;
             display: inline-block;
         }
+        /*
+                Styles for the navigation__icon::before and navigation__icon::after pseudo-selectors.
+        */
         &::before, &::after {
             content: "";
             position: absolute;
             left: 0;
             transition: all .2s;
         }
+        /*
+                Styles for the navigation__icon::before pseudo-selectors.
+        */
         &::before {
             top: -.8rem;
         }
+        /*
+                Styles for the navigation__icon::after pseudo-selectors.
+        */
         &::after {
             top: .8rem;
         }
     }
+    /*
+            Styles to be applied on the navigation__icon::before pseudo-selector when the navigation__button:hover state is entered.
+    */
     &__button:hover &__icon::before {
         top: -1rem;
     }
+    /*
+            Styles to be applied on the navigation__icon::after pseudo-selector when the navigation__button:hover state is entered.
+    */
     &__button:hover &__icon::after {
         top: 1rem;
     }
+    /*
+            Styles to be applied on the navigation__icon when the navigation__checkbox is checked.
+    */
     &__checkbox:checked + &__button &__icon{
         background-color: transparent;
     }
+    /*
+            Styles to be applied on the navigation__icon::before pseudo-selector when the navigation__checkbox is checked.
+    */
     &__checkbox:checked + &__button &__icon::before{
         top: 0;
         transform: rotate(135deg);
     }
+    /*
+            Styles to be applied on the navigation__icon::after pseudo-selector when the navigation__checkbox is checked.
+    */
     &__checkbox:checked + &__button &__icon::after{
         top: 0;
         transform: rotate(-135deg);

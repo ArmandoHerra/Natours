@@ -1,3 +1,7 @@
+//Component: _story.scss
+/*
+        Story element general styles.
+*/
 .story {
     width: 75%;
     margin: 0 auto;
@@ -8,14 +12,23 @@
     padding-left: 9rem;
     font-size: $default-font-size;
     transform: skewX(-12deg);
+    /*
+            Styles to be applied on the story element once the tab-port breakpoint is reached.
+    */
     @include respond(tab-port) {
         width: 100%;
         padding: 4rem;
         padding-left: 7rem;
     }
+    /*
+            Styles to be applied on the story elemente once the phone breakpoint is reached.
+    */
     @include respond(phone) {
         transform: skewX(0);
     }
+    /*
+            Styles for the story__shape element.
+    */
     &__shape {
         width: 15rem;
         height: 15rem;
@@ -28,22 +41,37 @@
         transform: translateX(-3rem) skewX(12deg);
         position: relative;
         overflow: hidden;
+        /*
+                Styles to be applied on the story__shape element once the phone breakpoint is reached.
+        */
         @include respond(phone) {
             transform: translateX(-1rem) skewX(0);
         }
     }
+    /*
+            Styles for the story__img element.
+    */
     &__img {
         height: 100%;
         transform: translateX(-4rem) scale(1.4);
         backface-visibility: hidden;
         transition: all .5s;
     }
+    /*
+            Styles for the story__text element.
+    */
     &__text {
         transform: skewX(12deg);
+        /*
+                Styles to be applied on the story__text element once the phone breakpoint is reached.
+        */
         @include respond(phone) {
             transform: skewX(0);
         }
     }
+    /*
+            Styles for the story__caption element.
+    */
     &__caption {
         position: absolute;
         top: 50%;
@@ -57,11 +85,16 @@
         transition: all .5s;
         backface-visibility: hidden;
     }
+    /*
+        Styles to be applied on the story__caption when the story enters the :hover state.
+    */
     &:hover &__caption {
         opacity: 1;
         transform: translate(-50%, -50%);
     }
-
+    /*
+        Styles to be applied on the story__img when the story enters the :hover state.
+    */
     &:hover &__img {
         transform: translateX(-4rem) scale(1);
         filter: blur(3px) brightness(80%);

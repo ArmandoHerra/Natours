@@ -1,50 +1,89 @@
+/*
+        Styles that control the grid layout for the website.
+*/
 .row {
     max-width: $grid-width;
     margin: 0 auto;
+    /*
+            Styles for all the row elements that are not the last one.
+    */
     &:not(:last-child) {
         margin-bottom: $gutter-vertical;
         /*
-            The media query takes care of changing the gutter's height to a smaller one for the grid when the tab-port breakpoint is reached.
+                The media query takes care of changing the gutter's height to a smaller one for the grid when the tab-port breakpoint is reached.
         */
         @include respond(tab-port) {
             margin-bottom: $gutter-vertical-small;
         }
     }
+    /*
+            Styles to be applied on the grid's max-width when the tab-port breakpoint is reached.
+    */
     @include respond(tab-port) {
         max-width: 50rem;
     }
+    /*
+            Clearfix floats.
+    */
     @include clearfix;
+    /*
+            Applying styles to all classes that start with 'col-' inside the row element.
+    */
     [class^="col-"] {
         float: left;
+        /*
+                Styles to be applied on every element that is not the last one.
+        */
         &:not(:last-child) {
             margin-right: $gutter-horizontal;
             /*
-                The media query takes care of setting margin-right to 0 once the tab-port breakpoint is reached.
+                    The media query takes care of setting margin-right to 0 once the tab-port breakpoint is reached.
             */
             @include respond(tab-port) {
                 margin-right: 0 !important;
                 margin-bottom: $gutter-vertical-small;
             }
         }
+        /*
+            Styles to be applied on all the columns, breaking them and making the whole grid a single column layout when the tab-port brakpoint is reached.
+        */
         @include respond(tab-port) {
             width: 100% !important;
         }
     }
+    /*
+            Definition of col-1-of-2 width.
+    */
     .col-1-of-2 {
         width: calc((100% - #{$gutter-horizontal}) / 2);
     }
+    /*
+            Definition of col-1-of-3 width.
+    */
     .col-1-of-3 {
         width: calc((100% - 2 * #{$gutter-horizontal}) / 3);
     }
+    /*
+            Definition of col-2-of-3 width.
+    */
     .col-2-of-3 {
         width: calc(2 * ((100% - 2 * #{$gutter-horizontal}) / 3) + #{$gutter-horizontal});
     }
+    /*
+            Definition of col-1-of-4 width.
+    */
     .col-1-of-4 {
         width: calc((100% - 3 * #{$gutter-horizontal}) / 4);
     }
+    /*
+            Definition of col-2-of-4 width.
+    */
     .col-2-of-4 {
         width: calc(2 * ((100% - 3 * #{$gutter-horizontal}) / 4) + #{$gutter-horizontal});
     }
+    /*
+            Definition of col-3-of-4 width.
+    */
     .col-3-of-4 {
         width: calc(3 * ((100% - 3 * #{$gutter-horizontal}) / 4) + 2 * #{$gutter-horizontal});
     }

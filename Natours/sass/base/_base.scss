@@ -1,17 +1,19 @@
+/* 
+        Reset initial margin and padding to the website.
+*/
 *, *::after, *::before {
     margin: 0;
     padding: 0;
     box-sizing: inherit;
 }
-
-html {
-    /*
+/*
         - This defines what 1 rem is.
         - 1rem is defined here as 10px.
         - The measurement in rem's also allows us to control the size of our whole layout making it dependant on the font-size CSS property. 
         - This way when the font-size is scaled up or down, everything will scale accordingly, saving us time on making the site responsive.
         - The media queries are placed from largest to smallest, so when the CSS applies the styles, the last styles that comply with the media query's condition is applied, thus applying the correct styles for the screen's width.
-    */
+*/
+html {
     font-size: 62.5%;
     @include respond(big-desktop) {
         // 1 rem = 12px.
@@ -30,7 +32,9 @@ html {
         font-size: 43.75%;
     }
 }
-
+/*
+        Definition of the box-sizing and the base page padding.
+*/
 body {
     box-sizing: border-box;
     padding: 3rem;

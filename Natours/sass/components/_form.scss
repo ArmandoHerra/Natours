@@ -1,7 +1,17 @@
+//Component: _form.scss
+/*
+        General form styles.
+*/
 .form {
+    /*
+        Styles to be applied on all the form__group elements that are not the last one of them.
+    */
     &__group:not(:last-child) {
         margin-bottom: 2rem;
     }
+    /*
+            Styles for the form__input element.
+    */
     &__input {
         font-size: 1.5rem;
         font-family: inherit;
@@ -14,21 +24,36 @@
         width: 90%;
         display: block;
         transition: all .3s;
+        /*
+                Styles to be applied to the form__input once the tab-port breakpoint is reached.
+        */
         @include respond(tab-port) {
             width: 100%;
         }
+        /*
+                Styles for the form__input:focus state.
+        */
         &:focus {
             outline: none;
             box-shadow: 0 1rem 2rem rgba($color-black, .1);
             border-bottom: 3px solid $color-primary;
         }
+        /*
+                Styles for the form__input:focus:invalid state.
+        */
         &:focus:invalid {
             border-bottom: 3px solid $color-secondary-dark;
         }
+        /*
+                Styles for the form__input::-webkit-input-placeholder element.
+        */
         &::-webkit-input-placeholder {
             color: $color-grey-dark-2;
         }
     }
+    /*
+            Styles for the form__label element.
+    */
     &__label {
         font-size: 1.2rem;
         font-weight: 700;
@@ -37,28 +62,46 @@
         display: block;
         transition: all .3s;
     }
+    /*
+            Styles that allow us to simulate that the text from the placeholder falls off below the form__input.
+    */
     &__input:placeholder-shown + &__label{
         opacity: 0;
         visibility: hidden;
         transform: translateY(-4rem);
     }
+    /*
+            Styles for the form__radio-group.
+    */
     &__radio-group {
         width: 49%;
         display: inline-block;
+        /*
+                Styles to be applied on the form__radio-group once the tab-port breakpoint is reached.
+        */
         @include respond(tab-port) {
             width: 100%;
             margin-bottom: 2rem;
         }
     }
+    /*
+            Styles for the form__radio-input.
+    */
     &__radio-input {
         display: none;
     }
+    /*
+            Styles for the form__radio-label.
+    */
     &__radio-label {
         font-size: $default-font-size;
         cursor: pointer;
         position: relative;
         padding-left: 5rem;
     }
+    /*
+            Styles for the custom form__radio-button element.
+    */
     &__radio-button {
         height: 3rem;
         width: 3rem;
@@ -68,6 +111,9 @@
         position: absolute;
         left: 0;
         top: -.5rem;
+        /*
+                Styles for the form__radio-button::after pseudo-selector.
+        */
         &::after {
             content: "";
             display: block;
@@ -80,6 +126,9 @@
             transition: opacity .2s;
         }
     }
+    /*
+            Styles for the checkbox hack, allowing us to make the custom radio button.
+    */
     &__radio-input:checked + &__radio-label &__radio-button::after{
         opacity: 1;
     }

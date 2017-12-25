@@ -1,5 +1,12 @@
+//Component: _composition.scss
+/*
+    Styles for the composition element.
+*/
 .composition {
     position: relative;
+    /*
+            Styles for the composition__photo element.
+    */
     &__photo {
         width: 55%;
         box-shadow: 0 1.5rem 4rem rgba($color-black, .4);
@@ -8,38 +15,62 @@
         z-index: 1;
         outline-offset: 2rem;
         transition: all .3s;
+        /*
+                Styles when the tab-port breakpoint is reached.
+        */
         @include respond(tab-port) {
             float: left;
             position: relative;
             width: 33.333%;
             box-shadow: 0 1.5rem 3rem rgba($color-black, .2);
         }
+        /*
+                Styles for the composition__photo--p1 element.
+        */
         &--p1 {
             left: 0;
             top: -2rem;
+            /*
+                    Styles for the composition__photo--p1 element when the tab-port breakpoint is reached.
+            */
             @include respond(tab-port) {
                 top: 0;
                 transform: scale(1.2);
             }
         }
+        /*
+                Styles for the composition__photo--p2 element.
+        */
         &--p2 {
             right: 0;
             top: 2rem;
+            /*
+                    Styles for the composition__photo--p2 element when the tab-port breakpoint is reached.
+            */
             @include respond(tab-port) {
                 top: -1rem;
                 transform: scale(1.3);
                 z-index: 2;
             }
         }
+        /*
+                Styles for the composition__photo--p3 element.
+        */
         &--p3 {
             left: 20%;
             top: 10rem;
+            /*
+                    Styles for the composition__photo--p3 element when the tab-port breakpoint is reached.
+            */
             @include respond(tab-port) {
                 top: 1rem;
                 left: 0;
                 transform: scale(1.1);
             }
         }
+        /*
+                Styles to be applied on the composition__photo:hover state.
+        */
         &:hover {
             outline: 1.5rem solid $color-primary;
             transform: scale(1.05) translateY(-.5rem);
@@ -47,6 +78,9 @@
             z-index: 3;
         }
     }
+    /*
+            Styles to be applied on the elements that are currently not being hovered.
+    */
     &:hover &__photo:not(:hover){
         transform: scale(.9);
     }

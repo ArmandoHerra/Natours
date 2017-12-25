@@ -1,3 +1,7 @@
+//Component: _feature-box.scss
+/*
+    feature-box general styles.
+*/
 .feature-box {
     background-color: rgba($color-white, .8);
     font-size: 1.5rem;
@@ -6,9 +10,15 @@
     border-radius: 3px;
     box-shadow: 0 1.5rem 4rem rgba($color-black, .15);
     transition: transform .3s;
+    /*
+            Styles of feature-box that are changed when the tab-port breakpoint is reached.
+    */
     @include respond(tab-port) {
         padding: 2rem;
     }
+    /*
+            Styles for feature-box__icon.
+    */
     &__icon {
         font-size: 6rem;
         margin-bottom: .5rem;
@@ -16,10 +26,16 @@
         background-image: linear-gradient(to right, $color-primary-light, $color-primary-dark);
         -webkit-background-clip: text;
         color: transparent;
+        /*
+                Styles for feature-box__icon when the tab-port breakpoint is reached.
+        */
         @include respond(tab-port) {
             margin: 0;
         }
     }
+    /*
+            Styles for the feature-box:hover state.
+    */
     &:hover {
         transform: translateY(-1.5rem) scale(1.05);
     }

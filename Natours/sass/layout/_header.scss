@@ -1,3 +1,6 @@
+/*
+        Styles for the header element.
+*/
 .header {
     height: 95vh;
     background-image: linear-gradient(
@@ -10,18 +13,30 @@
     position: relative;
     -webkit-clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
     clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
+    /*
+            Styles to be applied on the header element once the phone breakpoint has been reached.
+    */
     @include respond(phone) {
         -webkit-clip-path: polygon(0 0, 100% 0, 100% 85vh, 0 100%);
     clip-path: polygon(0 0, 100% 0, 100% 85vh, 0 100%);
     }
+    /*
+            Styles for the header__logo-box element.
+    */
     &__logo-box {
         position: absolute;
         top: 4rem;
         left: 4rem;
     }
+    /*
+            Styles for the header__logo element.
+    */
     &__logo {
         height: 3.5rem;
     }
+    /*
+            Styles for the header__text-box element.
+    */
     &__text-box {
         position: absolute;
         top: 40%;
