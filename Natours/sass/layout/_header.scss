@@ -2,7 +2,7 @@
         Styles for the header element.
 */
 .header {
-    height: 95vh;
+    height: 85vh;
     background-image: linear-gradient(
         to right bottom, 
         rgba($color-primary-light, 0.8), 
@@ -11,12 +11,18 @@
     background-size: cover;
     background-position: top;
     position: relative;
-    -webkit-clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
-    clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
     /*
-            Media query for responsive header image. Loading only the large hero image when the device has a high DPI and on a larger screen size.
+            Apply following styles if the css property is supported by browser. If not, apply the previously defined styles.
     */
-    @media (min-resolution: 192dpi) and (min-width: 37.5em), (min-width: 125em) {
+    @supports (clip-path: polygon(0 0)) or (-webkit-clip-path: polygon(0 0)) {
+        -webkit-clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
+        clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
+        height: 95vh;
+    }
+    /*
+            Media query for responsive header image. Loading only the large hero image when the device has a high DPI and on a larger screen size. Also has an option for -webkit- based browsers.
+    */
+    @media (min-resolution: 192dpi) and (min-width: 37.5em), (-webkit-min-device-pixel-ratio: 2) and (min-width: 37.5em), (min-width: 125em) {
         background-image: linear-gradient(
         to right bottom, 
         rgba($color-primary-light, 0.8), 
