@@ -42,3 +42,10 @@ body {
        padding: 0;
     }
 }
+/*
+        Personalized color when text is selected.
+*/
+::selection {
+    background-color: $color-primary;
+    color: $color-white;
+}

@@ -68,16 +68,16 @@
 */
 html {
   font-size: 62.5%; }
-  @media (min-width: 112.5em) {
+  @media only screen and (min-width: 112.5em) {
     html {
       font-size: 75%; } }
-  @media (max-width: 75em) {
+  @media only screen and (max-width: 75em) {
     html {
       font-size: 56.25%; } }
-  @media (max-width: 56.25em) {
+  @media only screen and (max-width: 56.25em) {
     html {
       font-size: 50%; } }
-  @media (max-width: 37.5em) {
+  @media only screen and (max-width: 37.5em) {
     html {
       font-size: 43.75%; } }
 
@@ -87,9 +87,16 @@ html {
 body {
   box-sizing: border-box;
   padding: 3rem; }
-  @media (max-width: 56.25em) {
+  @media only screen and (max-width: 56.25em) {
     body {
       padding: 0; } }
+
+/*
+        Personalized color when text is selected.
+*/
+::selection {
+  background-color: #55c57a;
+  color: #fff; }
 
 /*
         Definition of body typography styles.
@@ -125,7 +132,7 @@ body {
     /*
                 Modification of the heading-primary--main styles when the phone breakpoint is reached.
         */ }
-    @media (max-width: 37.5em) {
+    @media only screen and (max-width: 37.5em) {
       .heading-primary--main {
         letter-spacing: 1rem;
         font-size: 5rem; } }
@@ -140,7 +147,7 @@ body {
     /*
                 Modification of the heading-primary--main styles when the phone breakpoint is reached.
         */ }
-    @media (max-width: 37.5em) {
+    @media only screen and (max-width: 37.5em) {
       .heading-primary--sub {
         letter-spacing: .5rem;
         font-size: 1rem; } }
@@ -168,10 +175,10 @@ body {
   /* 
             Definition of the heading-secondary:hover state styles.
     */ }
-  @media (max-width: 56.25em) {
+  @media only screen and (max-width: 56.25em) {
     .heading-secondary {
       font-size: 3rem; } }
-  @media (max-width: 37.5em) {
+  @media only screen and (max-width: 37.5em) {
     .heading-secondary {
       font-size: 2.5rem; } }
   .heading-secondary:hover {
@@ -217,7 +224,7 @@ body {
   /*
             Margin-bottom-medium utility class when the tab-port breakpoint is reached.
     */ }
-  @media (max-width: 56.25em) {
+  @media only screen and (max-width: 56.25em) {
     .u-margin-bottom-medium {
       margin-bottom: 3rem !important; } }
 
@@ -229,7 +236,7 @@ body {
   /*
             Margin-bottom-big utility class when the tab-port breakpoint is reached.
     */ }
-  @media (max-width: 56.25em) {
+  @media only screen and (max-width: 56.25em) {
     .u-margin-bottom-big {
       margin-bottom: 5rem !important; } }
 
@@ -538,7 +545,7 @@ body {
   .card__price-value {
     font-size: 6rem;
     font-weight: 100; }
-  @media (max-width: 56.25em) {
+  @media only screen and (max-width: 56.25em), only screen and (hover: none) {
     .card {
       height: auto;
       border-radius: 10px;
@@ -601,7 +608,7 @@ body {
     /*
                 Styles to be applied on the composition__photo:hover state.
         */ }
-    @media (max-width: 56.25em) {
+    @media only screen and (max-width: 56.25em) {
       .composition__photo {
         float: left;
         position: relative;
@@ -613,7 +620,7 @@ body {
       /*
                     Styles for the composition__photo--p1 element when the tab-port breakpoint is reached.
             */ }
-      @media (max-width: 56.25em) {
+      @media only screen and (max-width: 56.25em) {
         .composition__photo--p1 {
           top: 0;
           transform: scale(1.2); } }
@@ -623,7 +630,7 @@ body {
       /*
                     Styles for the composition__photo--p2 element when the tab-port breakpoint is reached.
             */ }
-      @media (max-width: 56.25em) {
+      @media only screen and (max-width: 56.25em) {
         .composition__photo--p2 {
           top: -1rem;
           transform: scale(1.3);
@@ -634,7 +641,7 @@ body {
       /*
                     Styles for the composition__photo--p3 element when the tab-port breakpoint is reached.
             */ }
-      @media (max-width: 56.25em) {
+      @media only screen and (max-width: 56.25em) {
         .composition__photo--p3 {
           top: 1rem;
           left: 0;
@@ -667,7 +674,7 @@ body {
   /*
             Styles for the feature-box:hover state.
     */ }
-  @media (max-width: 56.25em) {
+  @media only screen and (max-width: 56.25em) {
     .feature-box {
       padding: 2rem; } }
   .feature-box__icon {
@@ -680,7 +687,7 @@ body {
     /*
                 Styles for feature-box__icon when the tab-port breakpoint is reached.
         */ }
-    @media (max-width: 56.25em) {
+    @media only screen and (max-width: 56.25em) {
       .feature-box__icon {
         margin: 0; } }
   .feature-box:hover {
@@ -743,7 +750,7 @@ body {
     /*
                 Styles for the form__input::-webkit-input-placeholder element.
         */ }
-    @media (max-width: 56.25em) {
+    @media only screen and (max-width: 56.25em) {
       .form__input {
         width: 100%; } }
     .form__input:focus {
@@ -771,7 +778,7 @@ body {
     /*
                 Styles to be applied on the form__radio-group once the tab-port breakpoint is reached.
         */ }
-    @media (max-width: 56.25em) {
+    @media only screen and (max-width: 56.25em) {
       .form__radio-group {
         width: 100%;
         margin-bottom: 2rem; } }
@@ -879,10 +886,10 @@ body {
     /*
                 Styles to be applied on popup__left once the tab-port breakpoint is reached.
         */ }
-    @media (max-width: 75em) {
+    @media only screen and (max-width: 75em) {
       .popup__left {
         width: 35%; } }
-    @media (max-width: 56.25em) {
+    @media only screen and (max-width: 56.25em) {
       .popup__left {
         display: none; } }
   .popup__right {
@@ -969,12 +976,12 @@ body {
   /*
         Styles to be applied on the story__img when the story enters the :hover state.
     */ }
-  @media (max-width: 56.25em) {
+  @media only screen and (max-width: 56.25em) {
     .story {
       width: 100%;
       padding: 4rem;
       padding-left: 7rem; } }
-  @media (max-width: 37.5em) {
+  @media only screen and (max-width: 37.5em) {
     .story {
       transform: skewX(0); } }
   .story__shape {
@@ -997,7 +1004,7 @@ body {
         -webkit-shape-outside: circle(50% at 50% 50%);
         -moz-shape-outside: circle(50% at 50% 50%);
         shape-outside: circle(50% at 50% 50%); } }
-    @media (max-width: 37.5em) {
+    @media only screen and (max-width: 37.5em) {
       .story__shape {
         transform: translateX(-1rem) skewX(0); } }
   .story__img {
@@ -1010,7 +1017,7 @@ body {
     /*
                 Styles to be applied on the story__text element once the phone breakpoint is reached.
         */ }
-    @media (max-width: 37.5em) {
+    @media only screen and (max-width: 37.5em) {
       .story__text {
         transform: skewX(0); } }
   .story__caption {
@@ -1064,7 +1071,7 @@ body {
   /*
             Styles for the footer__copyright element.
     */ }
-  @media (max-width: 56.25em) {
+  @media only screen and (max-width: 56.25em) {
     .footer {
       padding: 8rem 0; } }
   .footer__logo-box {
@@ -1073,7 +1080,7 @@ body {
     /*
                 Styles to be applied on the footer__logo-box element once the tab-port breakpoint is reached.
         */ }
-    @media (max-width: 56.25em) {
+    @media only screen and (max-width: 56.25em) {
       .footer__logo-box {
         margin-bottom: 6rem; } }
   .footer__logo {
@@ -1086,7 +1093,7 @@ body {
     /*
                 Styles to be applied on the footer__navigation element once the tab-port breakpoint is reached.
         */ }
-    @media (max-width: 56.25em) {
+    @media only screen and (max-width: 56.25em) {
       .footer__navigation {
         width: 100%;
         text-align: center; } }
@@ -1125,7 +1132,7 @@ body {
     /*
                 Styles to be applied on the footer__copyright element once the tab-port breakpoint is reached.
         */ }
-    @media (max-width: 56.25em) {
+    @media only screen and (max-width: 56.25em) {
       .footer__copyright {
         width: 100%;
         float: none; } }
@@ -1171,10 +1178,10 @@ body {
     /*
                 The media query takes care of changing the gutter's height to a smaller one for the grid when the tab-port breakpoint is reached.
         */ }
-    @media (max-width: 56.25em) {
+    @media only screen and (max-width: 56.25em) {
       .row:not(:last-child) {
         margin-bottom: 6rem; } }
-  @media (max-width: 56.25em) {
+  @media only screen and (max-width: 56.25em) {
     .row {
       max-width: 50rem; } }
   .row::after {
@@ -1194,11 +1201,11 @@ body {
       /*
                     The media query takes care of setting margin-right to 0 once the tab-port breakpoint is reached.
             */ }
-      @media (max-width: 56.25em) {
+      @media only screen and (max-width: 56.25em) {
         .row [class^="col-"]:not(:last-child) {
           margin-right: 0 !important;
           margin-bottom: 6rem; } }
-    @media (max-width: 56.25em) {
+    @media only screen and (max-width: 56.25em) {
       .row [class^="col-"] {
         width: 100% !important; } }
   .row .col-1-of-2 {
@@ -1246,10 +1253,10 @@ body {
       -webkit-clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
       clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
       height: 95vh; } }
-  @media (min-resolution: 192dpi) and (min-width: 37.5em), (-webkit-min-device-pixel-ratio: 2) and (min-width: 37.5em), (min-width: 125em) {
+  @media only screen and (min-resolution: 192dpi) and (min-width: 37.5em), only screen and (-webkit-min-device-pixel-ratio: 2) and (min-width: 37.5em), only screen and (min-width: 125em) {
     .header {
       background-image: linear-gradient(to right bottom, rgba(126, 213, 111, 0.8), rgba(40, 180, 133, 0.8)), url("../img/hero.jpg"); } }
-  @media (max-width: 37.5em) {
+  @media only screen and (max-width: 37.5em) {
     .header {
       -webkit-clip-path: polygon(0 0, 100% 0, 100% 85vh, 0 100%);
       clip-path: polygon(0 0, 100% 0, 100% 85vh, 0 100%); } }
@@ -1335,11 +1342,11 @@ body {
     /*
                 Styles to be applied on the navigation__button once the phone breakpoint is reached.
         */ }
-    @media (max-width: 56.25em) {
+    @media only screen and (max-width: 56.25em) {
       .navigation__button {
         top: 4rem;
         right: 4rem; } }
-    @media (max-width: 37.5em) {
+    @media only screen and (max-width: 37.5em) {
       .navigation__button {
         top: 3rem;
         right: 3rem; } }
@@ -1359,11 +1366,11 @@ body {
     /*
                 Styles to be applied on the navigation__background once the phone breakpoint is reached.
         */ }
-    @media (max-width: 56.25em) {
+    @media only screen and (max-width: 56.25em) {
       .navigation__background {
         top: 4.5rem;
         right: 4.5rem; } }
-    @media (max-width: 37.5em) {
+    @media only screen and (max-width: 37.5em) {
       .navigation__background {
         top: 3.5rem;
         right: 3.5rem; } }
@@ -1471,7 +1478,7 @@ body {
   /*
             Styles to be applied on section-about once the tab-port breakpoint has been reached.
     */ }
-  @media (max-width: 56.25em) {
+  @media only screen and (max-width: 56.25em) {
     .section-about {
       padding: 20rem 0; } }
 
@@ -1492,7 +1499,7 @@ body {
     */ }
   .section-features > * {
     transform: skewY(7deg); }
-  @media (max-width: 56.25em) {
+  @media only screen and (max-width: 56.25em) {
     .section-features {
       padding: 10rem 0; } }
 
@@ -1506,7 +1513,7 @@ body {
   /*
             Styles to be applied on section-tours once the tab-port breakpoint has been reached.
     */ }
-  @media (max-width: 56.25em) {
+  @media only screen and (max-width: 56.25em) {
     .section-tours {
       padding: 20rem 0 10rem 0; } }
 
@@ -1519,7 +1526,7 @@ body {
   /*
             Styles to be applied on section-stories once the tab-port breakpoint has been reached.
     */ }
-  @media (max-width: 56.25em) {
+  @media only screen and (max-width: 56.25em) {
     .section-stories {
       padding: 10rem 0; } }
 
@@ -1532,7 +1539,7 @@ body {
   /*
             Styles to be applied on section-book once the tab-port breakpoint has been reached.
     */ }
-  @media (max-width: 56.25em) {
+  @media only screen and (max-width: 56.25em) {
     .section-book {
       padding: 10rem 0; } }
 
@@ -1553,10 +1560,10 @@ body {
   /*
             Styles for the book__form element.
     */ }
-  @media (max-width: 75em) {
+  @media only screen and (max-width: 75em) {
     .book {
       background-image: linear-gradient(105deg, rgba(255, 255, 255, 0.9) 0%, rgba(255, 255, 255, 0.9) 65%, transparent 65%), url("../img/nat-10.jpg"); } }
-  @media (max-width: 56.25em) {
+  @media only screen and (max-width: 56.25em) {
     .book {
       background-image: linear-gradient(to right, rgba(255, 255, 255, 0.9) 0%, rgba(255, 255, 255, 0.9) 100%), url("../img/nat-10.jpg"); } }
   .book__form {
@@ -1568,9 +1575,9 @@ body {
     /*
                 Styles to be applied on the book_form element once the tab-port breakpoint is reached.
         */ }
-    @media (max-width: 75em) {
+    @media only screen and (max-width: 75em) {
       .book__form {
         width: 65%; } }
-    @media (max-width: 56.25em) {
+    @media only screen and (max-width: 56.25em) {
       .book__form {
         width: 100%; } }

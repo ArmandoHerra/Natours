@@ -186,7 +186,7 @@
         Media query for adjusting the cards when the screen hits the tab-port breakpoint.
         The card was redesigned for smaller screens. That is why the respond mixin is bigger.
     */
-    @include respond(tab-port) {
+    @media only screen and (max-width: 56.25em), only screen and (hover: none) {
         height: auto;
         border-radius: 10px;
         background-color: white;
