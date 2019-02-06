@@ -7,7 +7,6 @@
     "watch:sass": "node-sass sass/main.scss css/styles.css -w",
     "server:dev": "live-server",
     "start:dev": "npm-run-all --parallel server:dev watch:sass",
-
     "compile:sass": "node-sass sass/main.scss css/styles.comp.css",
     "concat:css": "concat -o css/styles.concat.css css/icon-font.css css/styles.comp.css",
     "prefix:css": "postcss --use autoprefixer -b \"last 10 versions\" css/styles.concat.css -o css/styles.prefix.css",
@@ -27,8 +26,8 @@
   "devDependencies": {
     "autoprefixer": "^7.2.3",
     "concat": "^1.0.3",
-    "node-sass": "^4.7.2",
+    "node-sass": "^4.11.0",
     "npm-run-all": "^4.1.2",
-    "postcss-cli": "^4.1.1"
+    "postcss-cli": "^6.1.1"
   }
 }
